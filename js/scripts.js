@@ -22,15 +22,15 @@
       const wordArray = text.split(" ");
       let wordCount = 0;
       wordArray.forEach(function(element) {
-        if (word.toLowerCase() === element.toLowerCase()) {
+        if (element.toLowerCase().includes(word.toLowerCase())) {
           wordCount++;
         }
       });
       console.log("This is the word count for Number Of Occurences in Text" + wordCount);
       return wordCount;
     }
-    const text = "red";
-    const word = "red";
+    const text = "red.";
+    const word = "Red";
     numberOfOccurrencesInText(word, text);
 
     wordCounter("       ");

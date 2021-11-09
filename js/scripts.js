@@ -1,0 +1,24 @@
+//Business Logic
+//Practice Word Counter
+      function wordCounter(word) {
+        if (word.trim().length === 0) {
+          return 0;
+        }
+        let wordCount = 0;
+        const wordArray = word.split(" ");
+        wordArray.forEach(function(element) {
+          if (!Number(element)) {
+            wordCount++;
+          }
+        });
+        console.log(wordCount);
+        return wordCount;
+    };
+
+    wordCounter("       ");
+    wordCounter("Hi hi there");
+    wordCounter("hi 8 hi");
+// A simpler option
+//    function wordCount(text) {
+//      return text.split(" ").length;
+//    };

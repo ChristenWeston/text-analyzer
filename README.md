@@ -32,3 +32,24 @@ const text = "";
 const word = "red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 0
+
+Test: "It should return 1 occurrence of a word when the word and the text are the same."
+Code:
+const text = "red";
+const word = "red";
+numberOfOccurrencesInText(word, text);
+Expected Output: 1
+
+Test: "It should return the number of occurrences of a word."
+Code:
+const text = "red blue red red red green";
+const word = "red";
+numberOfOccurrencesInText(word, text);
+Expected Output: 4
+
+Test: "It should return a word match regardless of case."
+Code:
+const text = "red RED Red green Green GREEN";
+const word = "Red";
+numberOfOccurrencesInText(word, text);
+Expected Output: 3

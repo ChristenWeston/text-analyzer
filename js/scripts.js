@@ -15,6 +15,24 @@
         return wordCount;
     };
 
+    function numberOfOccurrencesInText(word, text) {
+      if (text.trim().length === 0) {
+        return 0;
+      }
+      const wordArray = text.split(" ");
+      let wordCount = 0;
+      wordArray.forEach(function(element) {
+        if (word === element) {
+          wordCount++;
+        }
+      });
+      console.log("This is the word count for Number Of Occurences in Text" + wordCount);
+      return wordCount;
+    }
+    const text = "red";
+    const word = "red";
+    numberOfOccurrencesInText(word, text);
+
     wordCounter("       ");
     wordCounter("Hi hi there");
     wordCounter("hi 8 hi");

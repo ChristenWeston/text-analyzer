@@ -1,3 +1,9 @@
+// Utility Logic
+
+function noInputtedWord(word, text) {
+  return ((text.trim().length === 0) || (word.trim().length === 0));
+}
+
 //Business Logic
 //Practice Word Counter
       function wordCounter(word) {
@@ -16,7 +22,7 @@
     };
 
     function numberOfOccurrencesInText(word, text) {
-      if ((text.trim().length === 0) || (word.trim().length === 0)) {
+      if (noInputtedWord(word,text)) {
         return 0;
       }
       const wordArray = text.split(" ");
@@ -75,6 +81,7 @@ $(document).ready(function() {
     const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
     $("#total-count").html(wordCount);
     $("#selected-count").html(occurrencesOfWord);
+    $("#bolded-passage").html(boldPassage(word, passage));
   });
 });
 // A simpler option

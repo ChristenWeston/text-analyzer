@@ -17,6 +17,7 @@ function noInputtedWord(word, text) {
             wordCount++;
           }
         });
+        ;
         return wordCount;
     };
 
@@ -30,8 +31,19 @@ function noInputtedWord(word, text) {
         if (element.toLowerCase().includes(word.toLowerCase())) {
           wordCount++;
         }
+        console.log(word + ":" + wordCount)
       });
       return wordCount;
+    }
+//In progress
+    function uniqueArray(text) {
+      const passage = text;
+      const wordArray = text.split(" ");
+      //Found in MDN Docs under array.protype.reduce()
+      let noDuplicates = Array.from(new Set(wordArray));
+      noDuplicates.forEach(function(element) {
+        numberOfOccurrencesInText(element, passage);
+      })
     }
 
     function includesRarestLetter(word) {
@@ -65,6 +77,7 @@ $(document).ready(function() {
     const word = $("#word").val();
     const wordCount = wordCounter(passage);
     const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
+    const unique = uniqueArray(passage);
     $("#total-count").html(wordCount);
     $("#selected-count").html(occurrencesOfWord);
     $("#bolded-passage").html(boldPassage(word, passage));

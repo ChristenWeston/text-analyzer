@@ -17,7 +17,6 @@ function noInputtedWord(word, text) {
             wordCount++;
           }
         });
-        console.log(wordCount);
         return wordCount;
     };
 
@@ -32,16 +31,13 @@ function noInputtedWord(word, text) {
           wordCount++;
         }
       });
-      console.log("This is the word count for Number Of Occurences in Text" + wordCount);
       return wordCount;
     }
 
     function includesRarestLetter(word) {
       if (word.toLowerCase().includes("q")) {
-        console.log("true");
         return true;
       }
-      console.log("false");
       return false;
     }
 
@@ -59,17 +55,7 @@ function noInputtedWord(word, text) {
         }
       });
       return htmlString + "</p>";
-      ;
-
-    const sentenceWithQTest = "Here is a word with it quiet";
-    const text = "red.";
-    const word = "Red";
-    numberOfOccurrencesInText(word, text);
-    includesRarestLetter(sentenceWithQTest);
-
-    wordCounter("       ");
-    wordCounter("Hi hi there");
-    wordCounter("hi 8 hi");
+    }
 
     //UI Logic
 $(document).ready(function() {
@@ -84,7 +70,3 @@ $(document).ready(function() {
     $("#bolded-passage").html(boldPassage(word, passage));
   });
 });
-// A simpler option
-//    function wordCount(text) {
-//      return text.split(" ").length;
-//    };

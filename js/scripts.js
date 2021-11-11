@@ -31,11 +31,11 @@ function noInputtedWord(word, text) {
         if (element.toLowerCase().includes(word.toLowerCase())) {
           wordCount++;
         }
-        console.log(word + ":" + wordCount)
+     //   console.log(word + ":" + wordCount)
       });
       return wordCount;
     }
-//In progress
+//In progress or use first instance of word below
     function uniqueArray(text) {
       const passage = text;
       const wordArray = text.split(" ");
@@ -44,6 +44,40 @@ function noInputtedWord(word, text) {
       noDuplicates.forEach(function(element) {
         numberOfOccurrencesInText(element, passage);
       })
+    }
+
+    function firstInstanceOfWord(word, text) {
+      const textArray = text.split(" ");
+      let position = -1;
+      textArray.forEach(function(element, index) {
+        console.log(index);
+        if ((word === element) && (position === -1)) {
+          position = index;
+        }
+        console.log("Element " + element);
+        console.log("word: " + word);
+      });
+      console.log("Position:" + position);
+      return position;
+    }
+
+    function wordList(text) {
+      const textArray = text.split(" ");
+      let position = 0;
+      let uniqueList = [];
+      textArray.forEach(function(element, index) {
+        uniqueList.forEach(function(element2, index){
+        if (element === uniqueList[position]) {
+          console.log("Duplicate word: " + element);
+          position++;
+        }
+        if (element !== uniqueList[position]) {
+          uniqueList[position] = element;
+          console.log("Unique word: " + element);
+          position++;
+        }
+      });
+      return uniqueList;
     }
 
     function includesRarestLetter(word) {
@@ -77,7 +111,8 @@ $(document).ready(function() {
     const word = $("#word").val();
     const wordCount = wordCounter(passage);
     const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
-    const unique = uniqueArray(passage);
+ //   const unique = uniqueArray(passage);
+    const wordList1 = wordList(passage);
     $("#total-count").html(wordCount);
     $("#selected-count").html(occurrencesOfWord);
     $("#bolded-passage").html(boldPassage(word, passage));

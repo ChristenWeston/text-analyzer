@@ -66,8 +66,8 @@ function noInputtedWord(word, text) {
       })
       console.log(uniqueListOccurs);
       console.log(stableList);
-      findIndexOfMaxNumber(uniqueListOccurs, stableList);
-     return uniqueList;
+      //findIndexOfMaxNumber(uniqueListOccurs, stableList);
+     return uniqueListOccurs;
     }
 
     function findIndexOfMaxNumber(numberedList, wordList) {
@@ -128,8 +128,10 @@ $(document).ready(function() {
     const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
     const wordList1 = wordList(passage);
     const uniqueListOccurs = createListOfOccurrences(wordList1, passage, wordList1);
+    const findIndexOfMaxNumber1 = findIndexOfMaxNumber(uniqueListOccurs, wordList1);
     $("#total-count").html(wordCount);
     $("#selected-count").html(occurrencesOfWord);
+    $("#most-common-words").html(findIndexOfMaxNumber1);
     $("#bolded-passage").html(boldPassage(word, passage));
   });
 });

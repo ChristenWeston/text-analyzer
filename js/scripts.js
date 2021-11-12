@@ -76,28 +76,17 @@ function noInputtedWord(word, text) {
       let max2 = length1 -1;
       let max3 = length1 -1;
       numberedList.forEach(function(element, index) {
-        console.log("Index: " + index);
-        console.log("Here are currently most common: " + wordList[max] + "," + wordList[max2] + "," + wordList[max3]);
         if (parseInt(element) > parseInt(numberedList[max])) {
-          console.log("Here are currently most common: " + wordList[max] + "," + wordList[max2] + "," + wordList[max3]);
-          console.log("element: " + element + "index" + index);
           max3 = max2;
           max2 = max;
           max = index;
-          console.log("Here are currently most common after1: " + wordList[max] + "," + wordList[max2] + "," + wordList[max3]);
         }
         else if (element <=parseInt(numberedList[max]) && element >= parseInt(numberedList[max2]) && element >= parseInt(numberedList[max3])) {
-          console.log("Here are currently most common: " + wordList[max] + "," + wordList[max2] + "," + wordList[max3]);
-          console.log("element: " + element + "index" + index);
           max3 = max2;
           max2 = index;
-          console.log("Here are currently most common after2: " + wordList[max] + "," + wordList[max2] + "," + wordList[max3]);
         }
         else if (element <=parseInt(numberedList[max]) && element <= parseInt(numberedList[max2]) && element >=parseInt(numberedList[max3])) {
-          console.log("Here are currently most common: " + wordList[max] + "," + wordList[max2] + "," + wordList[max3]);
-          console.log("element: " + element + "index" + index);
           max3 = index;
-          console.log("Here are currently most common after3: " + wordList[max] + "," + wordList[max2] + "," + wordList[max3]);
         }
         else if (element < max) {
         }

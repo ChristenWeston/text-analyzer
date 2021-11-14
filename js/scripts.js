@@ -92,7 +92,6 @@ function noInputtedWord(word, text) {
         }
       })
         let mostCommonWords = [wordList[max], wordList[max2], wordList[max3]];
-        console.log("Here are the most common words again: " + mostCommonWords);
         return mostCommonWords;
     }
 

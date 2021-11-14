@@ -91,8 +91,9 @@ function noInputtedWord(word, text) {
         else if (element < max) {
         }
       })
-        console.log("Here are the most common words " + wordList[max] + "," + wordList[max2] + "," + wordList[max3]); 
-        return max, max2, max3;
+        let mostCommonWords = [wordList[max], wordList[max2], wordList[max3]];
+        console.log("Here are the most common words again: " + mostCommonWords);
+        return mostCommonWords;
     }
 
     function includesRarestLetter(word) {

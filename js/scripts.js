@@ -1,25 +1,32 @@
 // Utility Logic
 
-function noInputtedWord(word, text) {
-  return ((text.trim().length === 0) || (word.trim().length === 0));
+function noInputtedWord() {
+  for (let i=0; i < arguments.length; i++) {
+    console.log(arguments[i]);
+    if (arguments[i].trim().length === 0) {
+      return true;
+    }
+  }
+  return false;
 }
 
 //Business Logic
 //Practice Word Counter
-      function wordCounter(word) {
-        if (word.trim().length === 0) {
-          return 0;
+// Business Logic
+
+    function wordCounter(text) {
+      if (noInputtedWord(text)) {
+        return 0;
+      }
+      let wordCount = 0;
+      const wordArray = text.split(" ");
+      wordArray.forEach(function(element) {
+        if (!Number(element)) {
+          wordCount++;
         }
-        let wordCount = 0;
-        const wordArray = word.split(" ");
-        wordArray.forEach(function(element) {
-          if (!Number(element)) {
-            wordCount++;
-          }
-        });
-        ;
-        return wordCount;
-    };
+      });
+      return wordCount;
+    }
 
     function numberOfOccurrencesInText(word, text) {
       if (noInputtedWord(word,text)) {

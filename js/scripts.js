@@ -132,7 +132,9 @@ $(document).ready(function() {
     const findIndexOfMaxNumber1 = findIndexOfMaxNumber(uniqueListOccurs, wordList1);
     $("#total-count").html(wordCount);
     $("#selected-count").html(occurrencesOfWord);
-    $("#most-common-words").html(findIndexOfMaxNumber1);
+    $("#first-most-common-word").html(findIndexOfMaxNumber1[0]);
+    $("#second-most-common-word").html(findIndexOfMaxNumber1[1]);
+    $("#third-most-common-word").html(findIndexOfMaxNumber1[2]);
     $("#bolded-passage").html(boldPassage(word, passage));
   });
 });
